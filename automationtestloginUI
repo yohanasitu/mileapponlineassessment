@@ -1,0 +1,9 @@
+WebDriver driver = new ChromeDriver();
+String baseUrl = "https://taskdev.mile.app/login/";
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+driver.findElement(By.item_label("input_OrganizationName")).sendKeys("testonboard");
+driver.findElement(By.item_label("input_EmailOrUsername")).sendKeys("Testing");
+driver.findElement(By.item_label("input_Password")).clear();
+driver.findElement(By.item_label("validate_Password")).sendKeys("The password field must be at least 6 characters");
+driver.findElement(By.item_label("button_Login")).click();
+driver.quit();
